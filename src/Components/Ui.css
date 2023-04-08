@@ -1,0 +1,307 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.box-left {
+    padding: 24px calc(4 * 1vw) 0 calc(4 * 1vw);
+    margin: 0 auto;
+    max-width: 500px;
+}
+
+.box-intro h2 {
+    font-size: 2rem;
+    line-height: 42px;
+    font-weight: 500;
+    text-transform: capitalize;
+    color: #001b5d;
+}
+
+.box-intro p {
+    font-weight: 300;
+    font-size: 14px;
+    margin-top: 16px;
+}
+
+.box-right {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 2rem;
+    overflow: hidden;
+}
+
+.child {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    position: relative;
+    row-gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 0 10px;
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    margin-top: 20px;
+}
+
+.child-card {
+    width: 280px;
+    height: 330px;
+    flex: 0 0 auto;
+    margin: 0 10px;
+    position: relative;
+    transform: scale(1);
+    transition: transform 0.25s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.bg-overlay {
+    background-color: #f6fbfe;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transform-origin: 50% 100%;
+    box-shadow: none;
+    transform: scale(1);
+    transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    overflow: hidden;
+}
+
+.overlay {
+    background-color: #fff;
+    display: block;
+    width: 230%;
+    height: 230%;
+    border-radius: 50%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%) scale(0);
+    opacity: 1;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
+        opacity 0.5s cubic-bezier(0.895, 0.03, 0.685, 0.22);
+}
+
+.child-content {
+    padding: 17px 40px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.svg-box {
+    width: 60px;
+    height: 50px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-start;
+    position: relative;
+}
+
+.svg-box svg {
+    width: 65px;
+    height: 60px;
+    left: 0px;
+    margin-top: -50px;
+    position: absolute;
+    top: 50%;
+}
+
+.child-content h3 {
+    font-size: 18px;
+    line-height: 24px;
+    margin: 1em 0;
+    color: #001b5d;
+}
+
+.child-content p {
+    font-weight: 300;
+}
+
+@media only screen and (min-width: 740px) {
+    .box-left {
+        display: block;
+        width: 48.2%;
+        height: calc(25.34722 * 1vw);
+        z-index: 1;
+        padding: calc(5.55556 * 1vw) calc(6.94444 * 1vw) calc(2.77778 * 1vw);
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .box-intro h2 {
+        margin: -0.375rem 0 1.5625rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        font-size: calc(3.05556 * 1vw);
+        line-height: 1.2;
+    }
+
+    .box-left p {
+        font-size: calc(1.04167 * 1vw);
+    }
+
+    .box-right {
+        display: block;
+        width: 100%;
+        height: auto;
+        position: relative;
+        margin: 0;
+    }
+
+    .child {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        row-gap: 0;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: 0;
+    }
+
+    .child1 {
+        display: block;
+        width: 48.2%;
+        height: calc(25.34722 * 1vw);
+        z-index: 1;
+        padding: calc(5.55556 * 1vw) calc(6.94444 * 1vw) calc(2.77778 * 1vw);
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+
+    .child-card {
+        position: relative;
+        z-index: 1;
+        width: 25.9%;
+        height: 25.34722vw;
+        height: calc(25.34722 * 1vw);
+        z-index: 0;
+        margin: 0;
+    }
+
+    .child-content {
+        padding: calc(4.79167 * 1vw) calc(3.47222 * 1vw);
+    }
+
+    .child-content h3 {
+        font-size: calc(1.875 * 1vw);
+        line-height: 1.11;
+        font-weight: 300;
+        margin: 1.125rem 0 0;
+    }
+
+    .child-content p {
+        margin: 1.25rem 0 0;
+        font-size: calc(.9 * 1vw);
+        line-height: 1.47;
+        transform: translateY(0);
+        opacity: 0;
+        transition: all 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+        transition-property: transform, opacity;
+    }
+}
+
+@media only screen and (max-width: 740px) {
+    .svg-box svg {
+        margin-top: -25px !important;
+    }
+}
+
+@media screen and (min-width: 991px) {
+    .child-card {
+        cursor: pointer;
+    }
+
+    .child-content {
+        transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .child-card p {
+        margin: 1.25rem 0 0;
+        font-size: calc(1.04167 * 1vw);
+    }
+
+    .child-card:hover {
+        z-index: 1;
+    }
+
+    .child-card:hover .bg-overlay {
+        transform: scale(1.05);
+        box-shadow: 0 calc(1.38889 * 1vw) calc(2.77778 * 1vw) rgba(0, 0, 0, 0.05);
+    }
+
+    .child-card:hover .bg-overlay .overlay {
+        transform: translate(-50%, 50%) scale(1);
+    }
+
+    .child-card:hover .child-content {
+        transform: translateY(-1.875rem);
+    }
+
+    .child-card:hover .child-content p {
+        transform: translateY(0.125rem);
+        opacity: 1;
+    }
+
+    .child-card:nth-child(2n) .bg-overlay {
+        background-color: #f7f9fb !important;
+    }
+
+    .bg-overlay {
+        background-color: #fff !important;
+    }
+
+    .child-card:nth-child(odd):hover .bg-overlay .overlay {
+        background-color: #fff !important;
+    }
+
+    .child-card:nth-child(odd) .bg-overlay .overlay {
+        background-color: #f7f9fb !important;
+    }
+}
+
+@media screen and (min-width: 1199.99px) {
+    .box-left {
+        padding: calc(5.55556 * 1vw) calc(6.94444 * 1vw) calc(2.77778 * 1vw);
+        height: calc(25.34722 * 1vw);
+        max-width: 100%;
+    }
+
+    .child {
+        padding: 0;
+    }
+}
+
+@media screen and (min-width: 1399.99px) {
+    .box-left {
+        padding: calc(5.55556 * 1vw) calc(4.94444 * 1vw) calc(2.77778 * 1vw) calc(6.94444 * 1vw);
+    }
+
+    .box-intro h2 {
+        font-size: calc(3.05556 * 1vw);
+    }
+
+    .box-left p {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 1500px) {
+    .box-left p {
+        font-size: 17px;
+    }
+}
